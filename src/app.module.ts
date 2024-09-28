@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ArticleModule } from './article/article.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -11,10 +12,11 @@ import { ArticleModule } from './article/article.module';
       username: 'nurbek',
       password: '',
       database: 'blog_db',
-      autoLoadEntities: true, // load entities automatically from provided module
+      autoLoadEntities: true, // load entities automatically from provided modules
       synchronize: true,
     }),
     ArticleModule,
+    UserModule,
   ],
 })
 export class AppModule {}
